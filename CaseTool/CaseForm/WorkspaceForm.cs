@@ -49,6 +49,36 @@ namespace CaseTool.CaseForm
             workspaceCaseFlow.MouseDown += new MouseEventHandler(workspaceCaseFlow_MouseDown);
             workspaceCaseFlow.AfterResize += new AddFlow.AfterResizeEventHandler(workspaceCaseFlow_AfterResize);
             this.Controls.Add(workspaceCaseFlow);
+            workspaceCaseFlow.KeyDown += new KeyEventHandler(workspaceCaseFlow_KeyDown);
+        }
+
+        void workspaceCaseFlow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                foreach (Node node in workspaceCaseFlow.Nodes)
+                {
+                    if (node.Selected == true)
+                    {
+                        //删除节点前，先删除该与节点相连的所有连线
+                        foreach (Link link in node.Links)
+                        {
+                            node.Links.Remove(link);
+                        }
+                        workspaceCaseFlow.Nodes.Remove(node);
+                        return;
+                    }
+                    //若不是该节点，则遍历节点的入线
+                    foreach (Link lk in node.InLinks)
+                    {
+                        if (lk.Selected == true)
+                        {
+                            node.Links.Remove(lk);
+                            return;
+                        }
+                    }
+                }
+            }
         }
 
         void workspaceCaseFlow_AfterResize(object sender, EventArgs e)
