@@ -54,27 +54,54 @@ namespace CaseTool.CaseForm
 
         void workspaceCaseFlow_KeyDown(object sender, KeyEventArgs e)
         {
+            //全选
+            if (e.Control && e.KeyCode == Keys.A)
+            {
+                foreach (Node node in workspaceCaseFlow.Nodes)
+                {
+                    node.Selected = true;
+                    foreach (Link link in node.InLinks)
+                    {
+                        link.Selected = true;
+                    }
+                }
+            }
+
+            //删除
             if (e.KeyCode == Keys.Delete)
             {
+                List<Node> delNode = new List<Node>();
+                
+                
                 foreach (Node node in workspaceCaseFlow.Nodes)
                 {
                     if (node.Selected == true)
                     {
                         //删除节点前，先删除该与节点相连的所有连线
-                        foreach (Link link in node.Links)
-                        {
-                            node.Links.Remove(link);
-                        }
-                        workspaceCaseFlow.Nodes.Remove(node);
-                        return;
+                        node.Links.Clear();
+                        //workspaceCaseFlow.Nodes.Remove(node);
+                        delNode.Add(node);
                     }
-                    //若不是该节点，则遍历节点的入线
-                    foreach (Link lk in node.InLinks)
+                    else
                     {
-                        if (lk.Selected == true)
+                        //若不是该节点，则遍历节点的入线
+                        foreach (Link lk in node.InLinks)
                         {
-                            node.Links.Remove(lk);
-                            return;
+                            if (lk.Selected == true)
+                            {
+                                node.Links.Remove(lk);
+                            }
+                        }
+                    }
+                }
+
+                if (delNode.Count != 0)
+                {
+                    foreach (Node node in delNode)
+                    {
+                        if (node.Tag is Conatants.NodeTag)
+                        {
+                            workspaceCaseFlow.Nodes.Remove(node);
                         }
                     }
                 }
@@ -205,8 +232,8 @@ namespace CaseTool.CaseForm
         {
             foreach (Node tmp in node.Children)
             {
-                //tmp.Size = new SizeF(node.Size.Width, node.Size.Height / 3);
-                //tmp.Location = new PointF(node.Location.X, node.Location.Y + node.Size.Height * 2 / 3);
+                tmp.Size = new SizeF(node.Size.Width, node.Size.Height / 3);
+                tmp.Location = new PointF(node.Location.X, node.Location.Y + node.Size.Height / 2);
             }
         }
 

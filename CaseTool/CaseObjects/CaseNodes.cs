@@ -216,17 +216,31 @@ namespace CaseTool.CaseObjects
         private static Node CreateAwaySolutionNode(CaseFlow caseFlow, Point pt)
         {
             GraphicsPath path = new GraphicsPath();//节点上半部分半圆形形状
-            path.AddArc(0, 0, 100, 40, 180, 0);//弧
+            path.AddPie(0, 0, 60, 60, 0, 180);//弧
             path.CloseFigure();
             path.FillMode = FillMode.Alternate;
 
-            Node node = new Node(pt.X,pt.Y,100,40);
+            Node node = new Node(pt.X,pt.Y,100,100);
             node.Text = Conatants.M_AWAY_SOLUTION;
+            node.Alignment = Alignment.CenterTOP;
+            node.Shape.Style = ShapeStyle.Custom;
             node.Shape.GraphicsPath = path;
             node.Shadow.Style = ShadowStyle.RightBottom;
+            node.Shape.Orientation = ShapeOrientation.so_180;
             node.Tag = Conatants.NodeTag.M_AWAY_SOLUTION;
             caseFlow.Nodes.Add(node);
 
+
+            Node subnode = new Node(pt.X, pt.Y + node.Size.Height / 2, node.Size.Width, node.Size.Height / 3);
+            caseFlow.Nodes.Add(subnode);
+            subnode.Shape.Style = ShapeStyle.Rectangle;
+            subnode.Shadow.Style = ShadowStyle.RightBottom;
+            subnode.XMoveable = false;
+            subnode.YMoveable = false;
+            subnode.XSizeable = false;
+            subnode.YSizeable = false;
+            subnode.Text = "Module identifier";
+            subnode.Parent = node;
             return node;
 
         }
