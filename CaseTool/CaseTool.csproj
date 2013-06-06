@@ -89,6 +89,12 @@
     <Compile Include="CaseForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CaseForm\PattenlibForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaseForm\PattenlibForm.Designer.cs">
+      <DependentUpon>PattenlibForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CaseForm\PropertyForm.cs">
       <SubType>Form</SubType>
     </Compile>

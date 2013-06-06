@@ -54,6 +54,11 @@ namespace CaseTool.CaseForm
 
         void workspaceCaseFlow_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Left)
+            {
+ 
+            }
+
             //全选
             if (e.Control && e.KeyCode == Keys.A)
             {
