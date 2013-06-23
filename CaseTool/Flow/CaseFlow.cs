@@ -30,12 +30,12 @@ namespace CaseTool.Flow
 
         void CaseFlow_AfterAddLink(object sender, AfterAddLinkEventArgs e)
         {
-            Conatants.NodeTag start;
-            Conatants.NodeTag end;
+            Constants.NodeTag start;
+            Constants.NodeTag end;
             try
             {
-                start = (Conatants.NodeTag)e.Link.Org.Tag;
-                end = (Conatants.NodeTag)e.Link.Dst.Tag;
+                start = (Constants.NodeTag)e.Link.Org.Tag;
+                end = (Constants.NodeTag)e.Link.Dst.Tag;
             }
             catch (Exception ex)
             {
@@ -43,28 +43,28 @@ namespace CaseTool.Flow
                 return;
             }
 
-            if (start == Conatants.NodeTag.GOAL && end == Conatants.NodeTag.GOAL ||
-                start == Conatants.NodeTag.GOAL && end == Conatants.NodeTag.STRATEGY ||
-                start == Conatants.NodeTag.GOAL && end == Conatants.NodeTag.SOLUTION ||
+            if (start == Constants.NodeTag.GOAL && end == Constants.NodeTag.GOAL ||
+                start == Constants.NodeTag.GOAL && end == Constants.NodeTag.STRATEGY ||
+                start == Constants.NodeTag.GOAL && end == Constants.NodeTag.SOLUTION ||
 
-                start == Conatants.NodeTag.P_OPTIONAL)
+                start == Constants.NodeTag.P_OPTIONAL)
             {
                 e.Link.ArrowDst.Filled = true;
                 return;
             }
 
-            if (start == Conatants.NodeTag.GOAL && end == Conatants.NodeTag.CONTEXT ||
-                start == Conatants.NodeTag.GOAL && end == Conatants.NodeTag.ASSUMPTION ||
-                start == Conatants.NodeTag.GOAL && end == Conatants.NodeTag.JUSTIFICATION ||
-                start == Conatants.NodeTag.STRATEGY && end == Conatants.NodeTag.CONTEXT ||
-                start == Conatants.NodeTag.STRATEGY && end == Conatants.NodeTag.ASSUMPTION ||
-                start == Conatants.NodeTag.STRATEGY && end == Conatants.NodeTag.JUSTIFICATION)
+            if (start == Constants.NodeTag.GOAL && end == Constants.NodeTag.CONTEXT ||
+                start == Constants.NodeTag.GOAL && end == Constants.NodeTag.ASSUMPTION ||
+                start == Constants.NodeTag.GOAL && end == Constants.NodeTag.JUSTIFICATION ||
+                start == Constants.NodeTag.STRATEGY && end == Constants.NodeTag.CONTEXT ||
+                start == Constants.NodeTag.STRATEGY && end == Constants.NodeTag.ASSUMPTION ||
+                start == Constants.NodeTag.STRATEGY && end == Constants.NodeTag.JUSTIFICATION)
             {
                 e.Link.ArrowDst.Filled = false;
                 return;
             }
 
-            if (end == Conatants.NodeTag.P_OPTIONAL)
+            if (end == Constants.NodeTag.P_OPTIONAL)
             {
                 e.Link.EndCap = System.Drawing.Drawing2D.LineCap.NoAnchor;
             }

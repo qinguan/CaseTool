@@ -10,39 +10,39 @@ namespace CaseTool.CaseObjects
     public class CaseNodes
     {
 
-        public static Node CreateNode(CaseFlow caseFlow, Point pt, Conatants.NodeTag tag)
+        public static Node CreateNode(CaseFlow caseFlow, Point pt, Constants.NodeTag tag)
         {
             switch (tag)
             {
-                case Conatants.NodeTag.GOAL:
+                case Constants.NodeTag.GOAL:
                     return CreateGoalNode(caseFlow,pt);
-                case Conatants.NodeTag.CONTEXT:
+                case Constants.NodeTag.CONTEXT:
                     return CreateContextNode(caseFlow,pt);
-                case Conatants.NodeTag.STRATEGY:
+                case Constants.NodeTag.STRATEGY:
                     return CreateStrategyNode(caseFlow,pt);
-                case Conatants.NodeTag.ASSUMPTION:
+                case Constants.NodeTag.ASSUMPTION:
                     return CreateAssumptionNode(caseFlow,pt);
-                case Conatants.NodeTag.SOLUTION:
+                case Constants.NodeTag.SOLUTION:
                     return CreateSolutionNode(caseFlow,pt);
-                case Conatants.NodeTag.JUSTIFICATION:
+                case Constants.NodeTag.JUSTIFICATION:
                     return CreateJustificationNode(caseFlow,pt);
-                case Conatants.NodeTag.M_AWAY_GOAL:
+                case Constants.NodeTag.M_AWAY_GOAL:
                     return CreateAwayGoalNode(caseFlow,pt);
-                case Conatants.NodeTag.M_MODULE:
+                case Constants.NodeTag.M_MODULE:
                     return CreateModuleNode(caseFlow, pt);
-                case Conatants.NodeTag.M_CONTRACT:
+                case Constants.NodeTag.M_CONTRACT:
                     return CreateContractNode(caseFlow, pt);
-                case Conatants.NodeTag.M_AWAY_CONTEXT:
+                case Constants.NodeTag.M_AWAY_CONTEXT:
                     return CreateAwayContextNode(caseFlow, pt);
-                case Conatants.NodeTag.M_AWAY_SOLUTION:
+                case Constants.NodeTag.M_AWAY_SOLUTION:
                     return CreateAwaySolutionNode(caseFlow, pt);
-                case Conatants.NodeTag.P_OPTIONAL:
+                case Constants.NodeTag.P_OPTIONAL:
                     return CreateOptionalNode(caseFlow, pt);
-                case Conatants.NodeTag.P_UNDEVELOPED:
+                case Constants.NodeTag.P_UNDEVELOPED:
                     return CreateUndevelopedNode(caseFlow, pt);
-                case Conatants.NodeTag.P_UNINSTANTIATED:
+                case Constants.NodeTag.P_UNINSTANTIATED:
                     return CreateUninstantiatedNode(caseFlow, pt);
-                case Conatants.NodeTag.P_UNDEVELOPEDANDUNINSTANTIATED:
+                case Constants.NodeTag.P_UNDEVELOPEDANDUNINSTANTIATED:
                     return CreateUndevelopedAndUninstantiatedNode(caseFlow, pt);
                 default:
                     return null;
@@ -55,8 +55,8 @@ namespace CaseTool.CaseObjects
             Node node = new Node(pt.X, pt.Y, 60, 30, "Goal");
             node.Shape.Style = ShapeStyle.RoundRect;
             node.Shadow.Style = ShadowStyle.RightBottom;
-            node.Tag = Conatants.NodeTag.GOAL;
-            node.Tooltip = Conatants.GOAL;
+            node.Tag = Constants.NodeTag.GOAL;
+            node.Tooltip = Constants.GOAL;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -66,8 +66,8 @@ namespace CaseTool.CaseObjects
             Node node = new Node(pt.X, pt.Y, 60, 40, "Solution");
             node.Shape.Style = ShapeStyle.Ellipse;
             node.Shadow.Style = ShadowStyle.RightBottom;
-            node.Tag = Conatants.NodeTag.SOLUTION;
-            node.Tooltip = Conatants.SOLUTION;
+            node.Tag = Constants.NodeTag.SOLUTION;
+            node.Tooltip = Constants.SOLUTION;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -77,8 +77,8 @@ namespace CaseTool.CaseObjects
             Node node = new Node(pt.X, pt.Y, 80, 30, "Strategy");
             node.Shape.Style = ShapeStyle.Data;
             node.Shadow.Style = ShadowStyle.RightBottom;
-            node.Tag = Conatants.NodeTag.STRATEGY;
-            node.Tooltip = Conatants.STRATEGY;
+            node.Tag = Constants.NodeTag.STRATEGY;
+            node.Tooltip = Constants.STRATEGY;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -88,8 +88,8 @@ namespace CaseTool.CaseObjects
             Node node = new Node(pt.X, pt.Y, 88, 40, "Justification");
             node.Shape.Style = ShapeStyle.Ellipse;
             node.Shadow.Style = ShadowStyle.RightBottom;
-            node.Tag = Conatants.NodeTag.JUSTIFICATION;
-            node.Tooltip = Conatants.JUSTIFICATION;
+            node.Tag = Constants.NodeTag.JUSTIFICATION;
+            node.Tooltip = Constants.JUSTIFICATION;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -114,8 +114,8 @@ namespace CaseTool.CaseObjects
             Node node = new Node(pt.X, pt.Y, 60, 40, "Context");
             node.Shape.Style = ShapeStyle.Termination;
             node.Shadow.Style = ShadowStyle.RightBottom;
-            node.Tag = Conatants.NodeTag.CONTEXT;
-            node.Tooltip = Conatants.CONTEXT;
+            node.Tag = Constants.NodeTag.CONTEXT;
+            node.Tooltip = Constants.CONTEXT;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -125,8 +125,8 @@ namespace CaseTool.CaseObjects
             Node node = new Node(pt.X, pt.Y, 60, 40, "Assumption");
             node.Shape.Style = ShapeStyle.Termination;
             node.Shadow.Style = ShadowStyle.RightBottom;
-            node.Tag = Conatants.NodeTag.ASSUMPTION;
-            node.Tooltip = Conatants.ASSUMPTION;
+            node.Tag = Constants.NodeTag.ASSUMPTION;
+            node.Tooltip = Constants.ASSUMPTION;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -137,12 +137,12 @@ namespace CaseTool.CaseObjects
 
         private static Node CreateAwayGoalNode(CaseFlow caseFlow, Point pt)
         {
-            Node node = new Node(pt.X, pt.Y, 120, 60, Conatants.M_AWAY_GOAL);
+            Node node = new Node(pt.X, pt.Y, 120, 60, Constants.M_AWAY_GOAL);
             node.Alignment = Alignment.LeftJustifyTOP;
             node.Shape.Style = ShapeStyle.Rectangle;
             node.Shadow.Style = ShadowStyle.RightBottom;
-            node.Tag = Conatants.NodeTag.M_AWAY_GOAL;
-            node.Tooltip = Conatants.M_AWAY_GOAL;
+            node.Tag = Constants.NodeTag.M_AWAY_GOAL;
+            node.Tooltip = Constants.M_AWAY_GOAL;
             caseFlow.Nodes.Add(node);
 
             Node subnode = new Node(pt.X, pt.Y + node.Size.Height * 3 / 5, node.Size.Width, node.Size.Height * 2 / 5);
@@ -161,11 +161,11 @@ namespace CaseTool.CaseObjects
 
         private static Node CreateModuleNode(CaseFlow caseFlow, Point pt)
         {
-            Node node = new Node(pt.X, pt.Y, 100, 40, Conatants.M_MODULE);
+            Node node = new Node(pt.X, pt.Y, 100, 40, Constants.M_MODULE);
             node.Shape.Style = ShapeStyle.Rectangle;
             node.Shadow.Style = ShadowStyle.RightBottom;
-            node.Tag = Conatants.NodeTag.M_MODULE;
-            node.Tooltip = Conatants.M_MODULE;
+            node.Tag = Constants.NodeTag.M_MODULE;
+            node.Tooltip = Constants.M_MODULE;
             caseFlow.Nodes.Add(node);
 
             Node subnode = new Node(pt.X, pt.Y - node.Size.Height / 3, node.Size.Width/3, node.Size.Height/3);
@@ -183,24 +183,24 @@ namespace CaseTool.CaseObjects
 
         private static Node CreateContractNode(CaseFlow caseFlow, Point pt)
         {
-            Node node = new Node(pt.X, pt.Y, 100, 40, Conatants.M_CONTRACT);
+            Node node = new Node(pt.X, pt.Y, 100, 40, Constants.M_CONTRACT);
             node.Shape.Style = ShapeStyle.Rectangle;
             //node.Shadow.Style = ShadowStyle.None;
-            node.Tag = Conatants.NodeTag.M_CONTRACT;
-            node.Tooltip = Conatants.M_CONTRACT;
+            node.Tag = Constants.NodeTag.M_CONTRACT;
+            node.Tooltip = Constants.M_CONTRACT;
             caseFlow.Nodes.Add(node);
 
             Node subnode = new Node(pt.X, pt.Y - node.Size.Height / 3, node.Size.Width / 3, node.Size.Height / 3);
             caseFlow.Nodes.Add(subnode);
             subnode.Shape.Style = ShapeStyle.Rectangle;
-            subnode.Tag = Conatants.Location.NORTH_WEST;
+            subnode.Tag = Constants.Location.NORTH_WEST;
             subnode.Selectable = false;
             subnode.Parent = node;
 
             Node subnode2 = new Node(pt.X+node.Size.Width * 2 /3, pt.Y + node.Size.Height, node.Size.Width / 3, node.Size.Height / 3);
             caseFlow.Nodes.Add(subnode2);
             subnode2.Shape.Style = ShapeStyle.Rectangle;
-            subnode2.Tag = Conatants.Location.SOUTH_EAST;
+            subnode2.Tag = Constants.Location.SOUTH_EAST;
             subnode2.Selectable = false;
             subnode2.Parent = node;
 
@@ -209,12 +209,12 @@ namespace CaseTool.CaseObjects
 
         private static Node CreateAwayContextNode(CaseFlow caseFlow, Point pt)
         {
-            Node node = new Node(pt.X, pt.Y, 120, 90, Conatants.M_AWAY_CONTEXT);
+            Node node = new Node(pt.X, pt.Y, 120, 90, Constants.M_AWAY_CONTEXT);
             node.Shape.Style = ShapeStyle.Delay;
             node.Shape.Orientation = ShapeOrientation.so_90;
             node.Shadow.Style = ShadowStyle.RightBottom;
-            node.Tag = Conatants.NodeTag.M_AWAY_CONTEXT;
-            node.Tooltip = Conatants.M_AWAY_CONTEXT;
+            node.Tag = Constants.NodeTag.M_AWAY_CONTEXT;
+            node.Tooltip = Constants.M_AWAY_CONTEXT;
             caseFlow.Nodes.Add(node);
 
             Node subnode = new Node(pt.X, pt.Y + node.Size.Height* 2 / 3, node.Size.Width , node.Size.Height / 3);
@@ -239,14 +239,14 @@ namespace CaseTool.CaseObjects
             path.FillMode = FillMode.Alternate;
 
             Node node = new Node(pt.X,pt.Y,100,100);
-            node.Text = Conatants.M_AWAY_SOLUTION;
+            node.Text = Constants.M_AWAY_SOLUTION;
             node.Alignment = Alignment.CenterTOP;
             node.Shape.Style = ShapeStyle.Custom;
             node.Shape.GraphicsPath = path;
             node.Shadow.Style = ShadowStyle.RightBottom;
             node.Shape.Orientation = ShapeOrientation.so_180;
-            node.Tag = Conatants.NodeTag.M_AWAY_SOLUTION;
-            node.Tooltip = Conatants.M_AWAY_SOLUTION;
+            node.Tag = Constants.NodeTag.M_AWAY_SOLUTION;
+            node.Tooltip = Constants.M_AWAY_SOLUTION;
             caseFlow.Nodes.Add(node);
 
 
@@ -270,10 +270,10 @@ namespace CaseTool.CaseObjects
         private static Node CreateOptionalNode(CaseFlow caseFlow, Point pt) 
         {
             Node node = new Node(pt.X, pt.Y, 40, 40);
-            node.Tooltip = Conatants.P_OPTIONAL;
+            node.Tooltip = Constants.P_OPTIONAL;
             node.Shape.Style = ShapeStyle.Decision;
             node.FillColor = Color.Black;
-            node.Tag = Conatants.NodeTag.P_OPTIONAL;
+            node.Tag = Constants.NodeTag.P_OPTIONAL;
             caseFlow.Nodes.Add(node);
 
             return node;
@@ -283,9 +283,9 @@ namespace CaseTool.CaseObjects
         {
 
             Node node = new Node(pt.X, pt.Y, 15, 15);
-            node.Tooltip = Conatants.P_UNDEVELOPEDANDUNINSTANTIATED;
+            node.Tooltip = Constants.P_UNDEVELOPEDANDUNINSTANTIATED;
             node.Shape.Style = ShapeStyle.Sort;
-            node.Tag = Conatants.NodeTag.P_UNDEVELOPEDANDUNINSTANTIATED;
+            node.Tag = Constants.NodeTag.P_UNDEVELOPEDANDUNINSTANTIATED;
             caseFlow.Nodes.Add(node);
 
             return node;
@@ -295,9 +295,9 @@ namespace CaseTool.CaseObjects
         {
 
             Node node = new Node(pt.X, pt.Y, 15, 15);
-            node.Tooltip = Conatants.P_UNDEVELOPED;
+            node.Tooltip = Constants.P_UNDEVELOPED;
             node.Shape.Style = ShapeStyle.Decision;
-            node.Tag = Conatants.NodeTag.P_UNDEVELOPED;
+            node.Tag = Constants.NodeTag.P_UNDEVELOPED;
             caseFlow.Nodes.Add(node);
 
             return node;
@@ -307,9 +307,9 @@ namespace CaseTool.CaseObjects
         {
 
             Node node = new Node(pt.X, pt.Y, 15, 15);
-            node.Tooltip = Conatants.P_UNINSTANTIATED;
+            node.Tooltip = Constants.P_UNINSTANTIATED;
             node.Shape.Style = ShapeStyle.Extract;
-            node.Tag = Conatants.NodeTag.P_UNINSTANTIATED;
+            node.Tag = Constants.NodeTag.P_UNINSTANTIATED;
             caseFlow.Nodes.Add(node);
 
             return node;

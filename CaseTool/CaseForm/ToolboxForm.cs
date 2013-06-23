@@ -25,22 +25,22 @@ namespace CaseTool.CaseForm
             TreeNode baseNode = new TreeNode("基本图符");
 
             TreeNode goal = new TreeNode("Goal");
-            goal.Tag = Conatants.NodeTag.GOAL;
+            goal.Tag = Constants.NodeTag.GOAL;
 
             TreeNode context = new TreeNode("Context");
-            context.Tag = Conatants.NodeTag.CONTEXT;
+            context.Tag = Constants.NodeTag.CONTEXT;
 
             TreeNode strategy = new TreeNode("Stragety");
-            strategy.Tag = Conatants.NodeTag.STRATEGY;
+            strategy.Tag = Constants.NodeTag.STRATEGY;
 
             TreeNode solution = new TreeNode("Solution");
-            solution.Tag = Conatants.NodeTag.SOLUTION;
+            solution.Tag = Constants.NodeTag.SOLUTION;
 
             TreeNode assumption = new TreeNode("Assumption");
-            assumption.Tag = Conatants.NodeTag.ASSUMPTION;
+            assumption.Tag = Constants.NodeTag.ASSUMPTION;
 
             TreeNode justification = new TreeNode("Justification");
-            justification.Tag = Conatants.NodeTag.JUSTIFICATION;
+            justification.Tag = Constants.NodeTag.JUSTIFICATION;
 
             baseNode.Nodes.Add(goal);
             baseNode.Nodes.Add(context);
@@ -62,20 +62,20 @@ namespace CaseTool.CaseForm
 
             TreeNode moduleNode = new TreeNode("模块化符号");
 
-            TreeNode awayGoal = new TreeNode(Conatants.M_AWAY_GOAL);
-            awayGoal.Tag = Conatants.NodeTag.M_AWAY_GOAL;
+            TreeNode awayGoal = new TreeNode(Constants.M_AWAY_GOAL);
+            awayGoal.Tag = Constants.NodeTag.M_AWAY_GOAL;
 
-            TreeNode module = new TreeNode(Conatants.M_MODULE);
-            module.Tag = Conatants.NodeTag.M_MODULE;
+            TreeNode module = new TreeNode(Constants.M_MODULE);
+            module.Tag = Constants.NodeTag.M_MODULE;
 
-            TreeNode contract = new TreeNode(Conatants.M_CONTRACT);
-            contract.Tag = Conatants.NodeTag.M_CONTRACT;
+            TreeNode contract = new TreeNode(Constants.M_CONTRACT);
+            contract.Tag = Constants.NodeTag.M_CONTRACT;
 
-            TreeNode awayContext = new TreeNode(Conatants.M_AWAY_CONTEXT);
-            awayContext.Tag = Conatants.NodeTag.M_AWAY_CONTEXT;
+            TreeNode awayContext = new TreeNode(Constants.M_AWAY_CONTEXT);
+            awayContext.Tag = Constants.NodeTag.M_AWAY_CONTEXT;
 
-            TreeNode awaySolution = new TreeNode(Conatants.M_AWAY_SOLUTION);
-            awaySolution.Tag = Conatants.NodeTag.M_AWAY_SOLUTION;
+            TreeNode awaySolution = new TreeNode(Constants.M_AWAY_SOLUTION);
+            awaySolution.Tag = Constants.NodeTag.M_AWAY_SOLUTION;
 
             moduleNode.Nodes.Add(awayGoal);
             moduleNode.Nodes.Add(module);
@@ -86,17 +86,17 @@ namespace CaseTool.CaseForm
 
             TreeNode pattenNode = new TreeNode("模式符号");
 
-            TreeNode optional = new TreeNode(Conatants.P_OPTIONAL);
-            optional.Tag = Conatants.NodeTag.P_OPTIONAL;
+            TreeNode optional = new TreeNode(Constants.P_OPTIONAL);
+            optional.Tag = Constants.NodeTag.P_OPTIONAL;
 
-            TreeNode undeveloped = new TreeNode(Conatants.P_UNDEVELOPED);
-            undeveloped.Tag = Conatants.NodeTag.P_UNDEVELOPED;
+            TreeNode undeveloped = new TreeNode(Constants.P_UNDEVELOPED);
+            undeveloped.Tag = Constants.NodeTag.P_UNDEVELOPED;
 
-            TreeNode uninstantiated = new TreeNode(Conatants.P_UNINSTANTIATED);
-            uninstantiated.Tag = Conatants.NodeTag.P_UNINSTANTIATED;
+            TreeNode uninstantiated = new TreeNode(Constants.P_UNINSTANTIATED);
+            uninstantiated.Tag = Constants.NodeTag.P_UNINSTANTIATED;
 
-            TreeNode undevelopedAndUninstantiated = new TreeNode(Conatants.P_UNDEVELOPEDANDUNINSTANTIATED);
-            undevelopedAndUninstantiated.Tag = Conatants.NodeTag.P_UNDEVELOPEDANDUNINSTANTIATED;
+            TreeNode undevelopedAndUninstantiated = new TreeNode(Constants.P_UNDEVELOPEDANDUNINSTANTIATED);
+            undevelopedAndUninstantiated.Tag = Constants.NodeTag.P_UNDEVELOPEDANDUNINSTANTIATED;
 
             pattenNode.Nodes.Add(optional);
             pattenNode.Nodes.Add(undeveloped);

@@ -127,7 +127,7 @@
     </Compile>
     <Compile Include="CaseObjects\CaseLinks.cs" />
     <Compile Include="CaseObjects\CaseNodes.cs" />
-    <Compile Include="Conatants.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Flow\CaseFlow.cs">
       <SubType>UserControl</SubType>
     </Compile>

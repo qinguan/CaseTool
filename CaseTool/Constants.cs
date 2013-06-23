@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CaseTool
 {
-    public class Conatants
+    public class Constants
     {
         public enum NodeTag 
         {

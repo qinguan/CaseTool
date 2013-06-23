@@ -105,7 +105,7 @@ namespace CaseTool.CaseForm
                 {
                     foreach (Node node in delNode)
                     {
-                        if (node.Tag is Conatants.NodeTag)
+                        if (node.Tag is Constants.NodeTag)
                         {
                             workspaceCaseFlow.Nodes.Remove(node);
                         }
@@ -120,21 +120,21 @@ namespace CaseTool.CaseForm
             {
                 if (node.Selected == true)
                 {
-                    switch ((Conatants.NodeTag)node.Tag)
+                    switch ((Constants.NodeTag)node.Tag)
                     {
-                        case Conatants.NodeTag.M_AWAY_GOAL:
+                        case Constants.NodeTag.M_AWAY_GOAL:
                             updateAwayGoal(node);
                             break;
-                        case Conatants.NodeTag.M_MODULE:
+                        case Constants.NodeTag.M_MODULE:
                             updateModule(node);
                             break;
-                        case Conatants.NodeTag.M_CONTRACT:
+                        case Constants.NodeTag.M_CONTRACT:
                             updateContract(node);
                             break;
-                        case Conatants.NodeTag.M_AWAY_CONTEXT:
+                        case Constants.NodeTag.M_AWAY_CONTEXT:
                             updateAwayContext(node);
                             break;
-                        case Conatants.NodeTag.M_AWAY_SOLUTION:
+                        case Constants.NodeTag.M_AWAY_SOLUTION:
                             updateAwaySolution(node);
                             break;
                         default:
@@ -166,7 +166,7 @@ namespace CaseTool.CaseForm
             if (e.Data.GetDataPresent(typeof(TreeNode)))
             {
                 TreeNode tn = (TreeNode)e.Data.GetData(typeof(TreeNode));
-                Node node = CaseNodes.CreateNode(this.workspaceCaseFlow,pt, (Conatants.NodeTag)tn.Tag);
+                Node node = CaseNodes.CreateNode(this.workspaceCaseFlow,pt, (Constants.NodeTag)tn.Tag);
                 //this.workspaceCaseFlow.Nodes.Add(node);
 
                 RefreshProperty(node);
@@ -214,11 +214,11 @@ namespace CaseTool.CaseForm
             foreach (Node tmp in node.Children)
             {
                 tmp.Size = new SizeF(node.Size.Width / 3, node.Size.Height / 3);
-                if ((Conatants.Location)tmp.Tag == Conatants.Location.NORTH_WEST)
+                if ((Constants.Location)tmp.Tag == Constants.Location.NORTH_WEST)
                 {
                     tmp.Location = new PointF(node.Location.X, node.Location.Y - node.Size.Height / 3);
                 }
-                else if ((Conatants.Location)tmp.Tag == Conatants.Location.SOUTH_EAST)
+                else if ((Constants.Location)tmp.Tag == Constants.Location.SOUTH_EAST)
                 {
                     tmp.Location = new PointF(node.Location.X + node.Size.Width * 2 / 3, node.Location.Y + node.Size.Height);
                 }
