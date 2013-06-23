@@ -16,10 +16,12 @@ namespace CaseTool.CaseForm
         public ToolboxForm()
         {
             InitializeComponent();
+            this.Text = "工具箱";
         }
 
         private void ToolboxForm_Load(object sender, EventArgs e)
         {
+            
             TreeNode baseNode = new TreeNode("基本图符");
 
             TreeNode goal = new TreeNode("Goal");
@@ -82,9 +84,30 @@ namespace CaseTool.CaseForm
             moduleNode.Nodes.Add(awaySolution);
             moduleNode.ExpandAll();
 
+            TreeNode pattenNode = new TreeNode("模式符号");
+
+            TreeNode optional = new TreeNode(Conatants.P_OPTIONAL);
+            optional.Tag = Conatants.NodeTag.P_OPTIONAL;
+
+            TreeNode undeveloped = new TreeNode(Conatants.P_UNDEVELOPED);
+            undeveloped.Tag = Conatants.NodeTag.P_UNDEVELOPED;
+
+            TreeNode uninstantiated = new TreeNode(Conatants.P_UNINSTANTIATED);
+            uninstantiated.Tag = Conatants.NodeTag.P_UNINSTANTIATED;
+
+            TreeNode undevelopedAndUninstantiated = new TreeNode(Conatants.P_UNDEVELOPEDANDUNINSTANTIATED);
+            undevelopedAndUninstantiated.Tag = Conatants.NodeTag.P_UNDEVELOPEDANDUNINSTANTIATED;
+
+            pattenNode.Nodes.Add(optional);
+            pattenNode.Nodes.Add(undeveloped);
+            pattenNode.Nodes.Add(uninstantiated);
+            pattenNode.Nodes.Add(undevelopedAndUninstantiated);
+            pattenNode.ExpandAll();
+
 
             this.toolboxTreeView.Nodes.Add(baseNode);
             this.toolboxTreeView.Nodes.Add(moduleNode);
+            this.toolboxTreeView.Nodes.Add(pattenNode);
             //this.toolboxTreeView.Nodes.Add(baseLink);
 
             this.toolboxTreeView.AllowDrop = true;

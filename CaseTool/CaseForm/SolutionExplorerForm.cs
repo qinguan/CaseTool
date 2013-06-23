@@ -16,6 +16,7 @@ namespace CaseTool.CaseForm
         public SolutionExplorerForm()
         {
             InitializeComponent();
+            this.Text = "解决方案";
         }
     }
 }

@@ -39,7 +39,7 @@
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "WelcomeForm";
-            this.Text = "Welcome";
+            this.Text = "欢迎页";
             this.Load += new System.EventHandler(this.WelcomeForm_Load);
             this.ResumeLayout(false);
 

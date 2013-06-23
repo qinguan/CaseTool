@@ -28,6 +28,7 @@ namespace CaseTool.CaseForm
         public WorkspaceForm()
         {
             InitializeComponent();
+            this.Text = "工作区";
         }
 
         private void WorkspaceForm_Load(object sender, EventArgs e)

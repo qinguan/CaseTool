@@ -45,7 +45,9 @@ namespace CaseTool.Flow
 
             if (start == Conatants.NodeTag.GOAL && end == Conatants.NodeTag.GOAL ||
                 start == Conatants.NodeTag.GOAL && end == Conatants.NodeTag.STRATEGY ||
-                start == Conatants.NodeTag.GOAL && end == Conatants.NodeTag.SOLUTION)
+                start == Conatants.NodeTag.GOAL && end == Conatants.NodeTag.SOLUTION ||
+
+                start == Conatants.NodeTag.P_OPTIONAL)
             {
                 e.Link.ArrowDst.Filled = true;
                 return;
@@ -62,6 +64,10 @@ namespace CaseTool.Flow
                 return;
             }
 
+            if (end == Conatants.NodeTag.P_OPTIONAL)
+            {
+                e.Link.EndCap = System.Drawing.Drawing2D.LineCap.NoAnchor;
+            }
             //this.Undo();
             
         }

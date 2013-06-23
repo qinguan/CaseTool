@@ -16,6 +16,7 @@ namespace CaseTool.CaseForm
         public PropertyForm()
         {
             InitializeComponent();
+            this.Text = "属性";
         }
 
         public PropertyGrid PropertyGrid

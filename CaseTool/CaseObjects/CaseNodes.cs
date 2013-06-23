@@ -36,6 +36,14 @@ namespace CaseTool.CaseObjects
                     return CreateAwayContextNode(caseFlow, pt);
                 case Conatants.NodeTag.M_AWAY_SOLUTION:
                     return CreateAwaySolutionNode(caseFlow, pt);
+                case Conatants.NodeTag.P_OPTIONAL:
+                    return CreateOptionalNode(caseFlow, pt);
+                case Conatants.NodeTag.P_UNDEVELOPED:
+                    return CreateUndevelopedNode(caseFlow, pt);
+                case Conatants.NodeTag.P_UNINSTANTIATED:
+                    return CreateUninstantiatedNode(caseFlow, pt);
+                case Conatants.NodeTag.P_UNDEVELOPEDANDUNINSTANTIATED:
+                    return CreateUndevelopedAndUninstantiatedNode(caseFlow, pt);
                 default:
                     return null;
             }
@@ -247,6 +255,56 @@ namespace CaseTool.CaseObjects
 
         #endregion
 
+         #region patten
+        private static Node CreateOptionalNode(CaseFlow caseFlow, Point pt) 
+        {
+            Node node = new Node(pt.X, pt.Y, 40, 40);
+            node.Tooltip = Conatants.P_OPTIONAL;
+            node.Shape.Style = ShapeStyle.Decision;
+            node.FillColor = Color.Black;
+            node.Tag = Conatants.NodeTag.P_OPTIONAL;
+            caseFlow.Nodes.Add(node);
+
+            return node;
+        }
+
+        private static Node CreateUndevelopedAndUninstantiatedNode(CaseFlow caseFlow, Point pt)
+        {
+
+            Node node = new Node(pt.X, pt.Y, 15, 15);
+            node.Tooltip = Conatants.P_UNDEVELOPEDANDUNINSTANTIATED;
+            node.Shape.Style = ShapeStyle.Sort;
+            node.Tag = Conatants.NodeTag.P_UNDEVELOPEDANDUNINSTANTIATED;
+            caseFlow.Nodes.Add(node);
+
+            return node;
+        }
+
+        private static Node CreateUndevelopedNode(CaseFlow caseFlow, Point pt)
+        {
+
+            Node node = new Node(pt.X, pt.Y, 15, 15);
+            node.Tooltip = Conatants.P_UNDEVELOPED;
+            node.Shape.Style = ShapeStyle.Decision;
+            node.Tag = Conatants.NodeTag.P_UNDEVELOPED;
+            caseFlow.Nodes.Add(node);
+
+            return node;
+        }
+
+        private static Node CreateUninstantiatedNode(CaseFlow caseFlow, Point pt)
+        {
+
+            Node node = new Node(pt.X, pt.Y, 15, 15);
+            node.Tooltip = Conatants.P_UNINSTANTIATED;
+            node.Shape.Style = ShapeStyle.Extract;
+            node.Tag = Conatants.NodeTag.P_UNINSTANTIATED;
+            caseFlow.Nodes.Add(node);
+
+            return node;
+        }
+
+        #endregion
     }
 
 }

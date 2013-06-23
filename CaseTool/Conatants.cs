@@ -22,7 +22,14 @@ namespace CaseTool
             M_CONTRACT,
             M_AWAY_SOLUTION,
             M_AWAY_CONTEXT,
-            M_PUBLIC_INDICATOR_SYMBOL
+            M_PUBLIC_INDICATOR_SYMBOL,
+
+            /*patten node*/
+            P_MULTIPLICITY,
+            P_OPTIONAL,
+            P_UNDEVELOPEDANDUNINSTANTIATED,
+            P_UNDEVELOPED,
+            P_UNINSTANTIATED
 
         }
 
@@ -50,5 +57,11 @@ namespace CaseTool
         public static readonly String M_AWAY_SOLUTION = "AwaySolution";
         public static readonly String M_AWAY_CONTEXT = "AwayContext";
         public static readonly String M_PUBLIC_INDICATOR_SYMBOL = "PublicIndicatorSymbol";
+
+        public static readonly String P_MULTIPLICITY = "Mulitiplicity";
+        public static readonly String P_OPTIONAL = "Optional";
+        public static readonly String P_UNDEVELOPEDANDUNINSTANTIATED = "UndevelopedAndUninstantiated";
+        public static readonly String P_UNDEVELOPED = "Undeveloped";
+        public static readonly String P_UNINSTANTIATED = "Uninstantiated";
     }
 }
