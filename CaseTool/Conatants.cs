@@ -51,6 +51,13 @@ namespace CaseTool
             SOUTH_WEST
         }
 
+        public static readonly String GOAL = "Goal";
+        public static readonly String SOLUTION = "Solution";
+        public static readonly String STRATEGY = "Strategy";
+        public static readonly String JUSTIFICATION = "Justification";
+        public static readonly String CONTEXT = "Context";
+        public static readonly String ASSUMPTION = "Assumption";
+
         public static readonly String M_AWAY_GOAL = "AwayGoal";
         public static readonly String M_MODULE = "Module";
         public static readonly String M_CONTRACT = "Contract";
@@ -60,7 +67,7 @@ namespace CaseTool
 
         public static readonly String P_MULTIPLICITY = "Mulitiplicity";
         public static readonly String P_OPTIONAL = "Optional";
-        public static readonly String P_UNDEVELOPEDANDUNINSTANTIATED = "UndevelopedAndUninstantiated";
+        public static readonly String P_UNDEVELOPEDANDUNINSTANTIATED = "Undeveloped&Uninstantiated";
         public static readonly String P_UNDEVELOPED = "Undeveloped";
         public static readonly String P_UNINSTANTIATED = "Uninstantiated";
     }

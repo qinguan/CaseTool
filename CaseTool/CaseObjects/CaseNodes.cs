@@ -56,6 +56,7 @@ namespace CaseTool.CaseObjects
             node.Shape.Style = ShapeStyle.RoundRect;
             node.Shadow.Style = ShadowStyle.RightBottom;
             node.Tag = Conatants.NodeTag.GOAL;
+            node.Tooltip = Conatants.GOAL;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -66,6 +67,7 @@ namespace CaseTool.CaseObjects
             node.Shape.Style = ShapeStyle.Ellipse;
             node.Shadow.Style = ShadowStyle.RightBottom;
             node.Tag = Conatants.NodeTag.SOLUTION;
+            node.Tooltip = Conatants.SOLUTION;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -76,6 +78,7 @@ namespace CaseTool.CaseObjects
             node.Shape.Style = ShapeStyle.Data;
             node.Shadow.Style = ShadowStyle.RightBottom;
             node.Tag = Conatants.NodeTag.STRATEGY;
+            node.Tooltip = Conatants.STRATEGY;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -86,6 +89,7 @@ namespace CaseTool.CaseObjects
             node.Shape.Style = ShapeStyle.Ellipse;
             node.Shadow.Style = ShadowStyle.RightBottom;
             node.Tag = Conatants.NodeTag.JUSTIFICATION;
+            node.Tooltip = Conatants.JUSTIFICATION;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -111,6 +115,7 @@ namespace CaseTool.CaseObjects
             node.Shape.Style = ShapeStyle.Termination;
             node.Shadow.Style = ShadowStyle.RightBottom;
             node.Tag = Conatants.NodeTag.CONTEXT;
+            node.Tooltip = Conatants.CONTEXT;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -121,6 +126,7 @@ namespace CaseTool.CaseObjects
             node.Shape.Style = ShapeStyle.Termination;
             node.Shadow.Style = ShadowStyle.RightBottom;
             node.Tag = Conatants.NodeTag.ASSUMPTION;
+            node.Tooltip = Conatants.ASSUMPTION;
             caseFlow.Nodes.Add(node);
             return node;
         }
@@ -136,6 +142,7 @@ namespace CaseTool.CaseObjects
             node.Shape.Style = ShapeStyle.Rectangle;
             node.Shadow.Style = ShadowStyle.RightBottom;
             node.Tag = Conatants.NodeTag.M_AWAY_GOAL;
+            node.Tooltip = Conatants.M_AWAY_GOAL;
             caseFlow.Nodes.Add(node);
 
             Node subnode = new Node(pt.X, pt.Y + node.Size.Height * 3 / 5, node.Size.Width, node.Size.Height * 2 / 5);
@@ -158,6 +165,7 @@ namespace CaseTool.CaseObjects
             node.Shape.Style = ShapeStyle.Rectangle;
             node.Shadow.Style = ShadowStyle.RightBottom;
             node.Tag = Conatants.NodeTag.M_MODULE;
+            node.Tooltip = Conatants.M_MODULE;
             caseFlow.Nodes.Add(node);
 
             Node subnode = new Node(pt.X, pt.Y - node.Size.Height / 3, node.Size.Width/3, node.Size.Height/3);
@@ -179,6 +187,7 @@ namespace CaseTool.CaseObjects
             node.Shape.Style = ShapeStyle.Rectangle;
             //node.Shadow.Style = ShadowStyle.None;
             node.Tag = Conatants.NodeTag.M_CONTRACT;
+            node.Tooltip = Conatants.M_CONTRACT;
             caseFlow.Nodes.Add(node);
 
             Node subnode = new Node(pt.X, pt.Y - node.Size.Height / 3, node.Size.Width / 3, node.Size.Height / 3);
@@ -205,6 +214,7 @@ namespace CaseTool.CaseObjects
             node.Shape.Orientation = ShapeOrientation.so_90;
             node.Shadow.Style = ShadowStyle.RightBottom;
             node.Tag = Conatants.NodeTag.M_AWAY_CONTEXT;
+            node.Tooltip = Conatants.M_AWAY_CONTEXT;
             caseFlow.Nodes.Add(node);
 
             Node subnode = new Node(pt.X, pt.Y + node.Size.Height* 2 / 3, node.Size.Width , node.Size.Height / 3);
@@ -236,6 +246,7 @@ namespace CaseTool.CaseObjects
             node.Shadow.Style = ShadowStyle.RightBottom;
             node.Shape.Orientation = ShapeOrientation.so_180;
             node.Tag = Conatants.NodeTag.M_AWAY_SOLUTION;
+            node.Tooltip = Conatants.M_AWAY_SOLUTION;
             caseFlow.Nodes.Add(node);
 
 
